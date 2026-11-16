@@ -376,6 +376,7 @@ main .btn--ink {
 }
 
 .topbar__links a {
+  white-space: nowrap;
   color: rgba(232, 238, 237, 0.75);
   font-weight: 600;
   text-decoration: none;
@@ -1111,7 +1112,8 @@ main .btn--ink {
 /* ---------- Кто я ---------- */
 
 .about {
-  padding: 96px 0 0;
+  padding: 88px 0;
+  border-top: 2px solid var(--ink);
 }
 
 .about[hidden] {
@@ -1128,9 +1130,9 @@ main .btn--ink {
 .about__photo {
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  border: 2px solid var(--ink);
+  object-position: top;
   border-radius: var(--radius);
   background: var(--card);
 }
@@ -1159,6 +1161,40 @@ main .btn--ink {
 
 .about__facts li:last-child {
   border-bottom: 1px solid var(--rule);
+}
+
+/* Сертификат: миниатюра, по клику открывается крупно */
+.about__cert {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about__cert img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.45);
+  transition: transform 0.18s var(--ease-out);
+}
+
+.about__cert span {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--runway);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about__cert:hover img {
+    transform: translateY(-3px);
+  }
 }
 
 .about__reviews {
@@ -1436,7 +1472,7 @@ main .btn--ink {
   }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1180px) {
   .topbar__links {
     display: none;
   }
@@ -1519,6 +1555,7 @@ main .btn--ink {
 
   .about {
     padding-top: 56px;
+    padding-bottom: 56px;
   }
 
   .gift,
@@ -1572,7 +1609,7 @@ main .btn--ink {
   }
 
   .about__photo {
-    max-width: 200px;
+    max-width: 260px;
   }
 
   .hero__facts {
