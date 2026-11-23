@@ -1440,6 +1440,13 @@ main .btn--ink {
   gap: 20px;
 }
 
+.footer__note {
+  flex-basis: 100%;
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #8a8f96;
+}
+
 /* ---------- Адаптив ---------- */
 
 @media (max-width: 960px) {
